@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "af05cdaf-385b-48d4-884e-caa133c3b267": {
+      "ProjectGuid": "af05cdaf-385b-48d4-884e-caa133c3b267",
+      "DisplayName": "Internet Service Provider",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

@@ -1,0 +1,81 @@
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Internet Service Provider.exe.config
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Internet Service Provider.exe
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Internet Service Provider.pdb
+M:\MyProjects\Internet Service Provider\Internet Service Provider\obj\Debug\Internet Service Provider.csproj.AssemblyReference.cache
+M:\MyProjects\Internet Service Provider\Internet Service Provider\obj\Debug\Internet Service Provider.csproj.SuggestedBindingRedirects.cache
+M:\MyProjects\Internet Service Provider\Internet Service Provider\obj\Debug\Internet_Service_Provider.AuthorizationWindow.resources
+M:\MyProjects\Internet Service Provider\Internet Service Provider\obj\Debug\Internet_Service_Provider.Properties.Resources.resources
+M:\MyProjects\Internet Service Provider\Internet Service Provider\obj\Debug\Internet Service Provider.csproj.GenerateResource.cache
+M:\MyProjects\Internet Service Provider\Internet Service Provider\obj\Debug\Internet Service Provider.csproj.CoreCompileInputs.cache
+M:\MyProjects\Internet Service Provider\Internet Service Provider\obj\Debug\Internet Service Provider.exe
+M:\MyProjects\Internet Service Provider\Internet Service Provider\obj\Debug\Internet Service Provider.pdb
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\BouncyCastle.Crypto.dll
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Google.Protobuf.dll
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\K4os.Compression.LZ4.dll
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\K4os.Compression.LZ4.Streams.dll
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\K4os.Hash.xxHash.dll
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Microsoft.Bcl.HashCode.dll
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.dll
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Microsoft.EntityFrameworkCore.dll
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Microsoft.EntityFrameworkCore.Relational.dll
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Microsoft.Extensions.Configuration.Binder.dll
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Microsoft.Extensions.Configuration.dll
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Microsoft.Extensions.Logging.dll
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Microsoft.Extensions.Options.dll
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Microsoft.Extensions.Primitives.dll
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\MySql.Data.dll
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\MySql.Data.EntityFrameworkCore.dll
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Renci.SshNet.dll
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\System.Buffers.dll
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\System.Collections.Immutable.dll
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\System.ComponentModel.Annotations.dll
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\System.Memory.dll
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\System.Numerics.Vectors.dll
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\System.Threading.Tasks.Extensions.dll
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Ubiety.Dns.Core.dll
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\ZstdNet.dll
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Google.Protobuf.pdb
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Google.Protobuf.xml
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\K4os.Compression.LZ4.xml
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\K4os.Compression.LZ4.Streams.xml
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\K4os.Hash.xxHash.xml
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Microsoft.Bcl.HashCode.xml
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Microsoft.EntityFrameworkCore.xml
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.xml
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Microsoft.EntityFrameworkCore.Relational.xml
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Microsoft.Extensions.Configuration.xml
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Microsoft.Extensions.Configuration.Binder.xml
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Microsoft.Extensions.Logging.xml
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Microsoft.Extensions.Options.xml
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Microsoft.Extensions.Primitives.xml
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\MySql.Data.xml
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\MySql.Data.EntityFrameworkCore.xml
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Renci.SshNet.xml
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\System.Buffers.xml
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\System.Collections.Immutable.xml
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\System.Memory.xml
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\System.Numerics.Vectors.xml
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\System.Threading.Tasks.Extensions.xml
+M:\MyProjects\Internet Service Provider\Internet Service Provider\obj\Debug\Internet Service Provider.csproj.CopyComplete
+M:\MyProjects\Internet Service Provider\Internet Service Provider\obj\Debug\Internet Service Provider.exe.config
+M:\MyProjects\Internet Service Provider\Internet Service Provider\obj\Debug\Internet_Service_Provider.MainWindow.resources
+M:\MyProjects\Internet Service Provider\Internet Service Provider\obj\Debug\Internet_Service_Provider.SubscriberControl.resources
+M:\MyProjects\Internet Service Provider\Internet Service Provider\obj\Debug\Internet_Service_Provider.ContractsControl.resources
