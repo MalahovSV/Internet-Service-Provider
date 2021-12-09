@@ -13,7 +13,7 @@ namespace Internet_Service_Provider
 {
     public partial class MainWindow : Form
     {
-        private List<UserControl> _users;
+        private List<UserControl> _controlls;
         private AuthorizationWindow _authorizationWindow;
         public MainWindow(AuthorizationWindow authorizationWindow)
         {
@@ -40,16 +40,26 @@ namespace Internet_Service_Provider
             contractControl.Click += (s, e) =>
             {
                 installColorForMenuButton(contractControl);
-                installControl(_users[0]);
+                installControl(_controlls[0]);
+                statusButton.Text = "Договоры";
+                
             };
             subscriberButton.Click += (s, e) => 
             { 
                 installColorForMenuButton(subscriberButton);
-                installControl(_users[1]);
+                installControl(_controlls[1]);
+                statusButton.Text = "Клиенты";
+                
             };
-            button3.Click += (s, e) => { installColorForMenuButton(button3); };
+            tariffsButton.Click += (s, e) => 
+            { 
+                installColorForMenuButton(tariffsButton); 
+                installControl(_controlls[2]);
+                statusButton.Text = "Тарифы";
+            };
             button4.Click += (s, e) => { installColorForMenuButton(button4); };
             button5.Click += (s, e) => { installColorForMenuButton(button5); };
+
         }
 
         private void installControl(UserControl installingUserControl)
@@ -74,7 +84,7 @@ namespace Internet_Service_Provider
             Color color = Color.FromArgb(Int32.Parse(temp[0]), Int32.Parse(temp[1]), Int32.Parse(temp[2]));
             contractControl.BackColor = color;
             subscriberButton.BackColor = color;
-            button3.BackColor = color;
+            tariffsButton.BackColor = color;
             button4.BackColor = color;
             button5.BackColor = color;
         }
@@ -86,9 +96,25 @@ namespace Internet_Service_Provider
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            _users = new List<UserControl>();
-            _users.Add(new ContractsControl());
-            _users.Add(new SubscriberControl());
+            _controlls = new List<UserControl>();
+            _controlls.Add(new Controls.Contract.ContractControl());
+            _controlls.Add(new Controls.Subscriber.SubscriberControl());
+            _controlls.Add(new Controls.Tariffs.TariffsControl());
+        }
+
+        private void tariffsButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

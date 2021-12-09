@@ -78,4 +78,5 @@ M:\MyProjects\Internet Service Provider\Internet Service Provider\obj\Debug\Inte
 M:\MyProjects\Internet Service Provider\Internet Service Provider\obj\Debug\Internet Service Provider.exe.config
 M:\MyProjects\Internet Service Provider\Internet Service Provider\obj\Debug\Internet_Service_Provider.MainWindow.resources
 M:\MyProjects\Internet Service Provider\Internet Service Provider\obj\Debug\Internet_Service_Provider.SubscriberControl.resources
-M:\MyProjects\Internet Service Provider\Internet Service Provider\obj\Debug\Internet_Service_Provider.ContractsControl.resources
+M:\MyProjects\Internet Service Provider\Internet Service Provider\obj\Debug\Internet_Service_Provider.Controls.Contract.ContractControl.resources
+M:\MyProjects\Internet Service Provider\Internet Service Provider\obj\Debug\Internet_Service_Provider.Controls.Tariffs.TariffsControl.resources

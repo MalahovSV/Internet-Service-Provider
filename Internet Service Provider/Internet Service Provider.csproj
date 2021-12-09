@@ -163,11 +163,23 @@
     </Compile>
     <Compile Include="Classes\Authorization\AuthorizationUtils.cs" />
     <Compile Include="Classes\DBMySqlUtils.cs" />
-    <Compile Include="ContractsControl.cs">
+    <Compile Include="Controls\Contract\ContractControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ContractsControl.Designer.cs">
-      <DependentUpon>ContractsControl.cs</DependentUpon>
+    <Compile Include="Controls\Contract\ContractControl.Designer.cs">
+      <DependentUpon>ContractControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Subscriber\SubscriberControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Subscriber\SubscriberControl.Designer.cs">
+      <DependentUpon>SubscriberControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Tariffs\TariffsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Tariffs\TariffsControl.Designer.cs">
+      <DependentUpon>TariffsControl.cs</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
@@ -177,17 +189,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SubscriberControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SubscriberControl.Designer.cs">
-      <DependentUpon>SubscriberControl.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="AuthorizationWindow.resx">
       <DependentUpon>AuthorizationWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ContractsControl.resx">
-      <DependentUpon>ContractsControl.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\Contract\ContractControl.resx">
+      <DependentUpon>ContractControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Subscriber\SubscriberControl.resx">
+      <DependentUpon>SubscriberControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Tariffs\TariffsControl.resx">
+      <DependentUpon>TariffsControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
@@ -202,9 +214,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SubscriberControl.resx">
-      <DependentUpon>SubscriberControl.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -227,6 +236,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\New_DocMini1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExampleIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TariffsIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TariffsIcon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TariffsIcon2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

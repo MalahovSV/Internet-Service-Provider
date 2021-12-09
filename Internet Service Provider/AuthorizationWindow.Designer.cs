@@ -54,13 +54,16 @@
             this.LoginBox.Name = "LoginBox";
             this.LoginBox.Size = new System.Drawing.Size(142, 20);
             this.LoginBox.TabIndex = 0;
+            this.LoginBox.Text = "Admin";
             // 
             // PasswordBox
             // 
             this.PasswordBox.Location = new System.Drawing.Point(187, 151);
             this.PasswordBox.Name = "PasswordBox";
+            this.PasswordBox.PasswordChar = '•';
             this.PasswordBox.Size = new System.Drawing.Size(142, 20);
             this.PasswordBox.TabIndex = 1;
+            this.PasswordBox.Text = "1";
             // 
             // label1
             // 
