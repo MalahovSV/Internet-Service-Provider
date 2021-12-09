@@ -32,16 +32,22 @@ namespace Internet_Service_Provider.Controls.Contract
                 {
                     connection.Open();
                     #region InsertCommandSubscribers
-                    myAdapter.InsertCommand = new MySqlCommand("insert into subscriber values (NULL, @surname, @first_name, @second_name, @number_phone)", connection);
-                    myAdapter.InsertCommand.Parameters.Add("@surname", MySqlDbType.VarChar, 30, "Фамилия");
-                    myAdapter.InsertCommand.Parameters.Add("@first_name", MySqlDbType.VarChar, 30, "Имя");
-                    myAdapter.InsertCommand.Parameters.Add("@second_name", MySqlDbType.VarChar, 30, "Отчество");
-                    myAdapter.InsertCommand.Parameters.Add("@number_phone", MySqlDbType.VarChar, 17, "Номер телефона");
+
+                    
+
+                    
+
+
+                    myAdapter.InsertCommand = new MySqlCommand("insert into contracts values (NULL, @number_contract, @date_contract, @adress, @fk_tariff, @fk_subscriber)", connection);
+                    myAdapter.InsertCommand.Parameters.Add("@number_contract", MySqlDbType.VarChar, 30, "Номер договора");
+                    myAdapter.InsertCommand.Parameters.Add("@date_contract", MySqlDbType.Date, 30, "Дата составления договора");
+                    myAdapter.InsertCommand.Parameters.Add("@adress", MySqlDbType.VarChar, 60, "Адрес абонента");
+                    //myAdapter.InsertCommand.Parameters.Add("@fk_tariff", MySqlDbType.Int32, fk_tariff);
                     #endregion
 
                     #region DeleteCommandSubscriber
-                    myAdapter.DeleteCommand = new MySqlCommand("delete from subscriber where id_subscriber = @id_subscriber", connection);
-                    myAdapter.DeleteCommand.Parameters.Add("@id_subscriber", MySqlDbType.VarChar, 5, "ID");
+                    myAdapter.DeleteCommand = new MySqlCommand("delete from contracts where id_contracts = @id_contracts", connection);
+                    myAdapter.DeleteCommand.Parameters.Add("@id_contracts", MySqlDbType.VarChar, 5, "ID");
                     #endregion
 
                     #region UpdateCommandSubscriber
@@ -76,15 +82,21 @@ namespace Internet_Service_Provider.Controls.Contract
                                                                         date_contract as 'Дата составления договора',
                                                                         adress as 'Адрес абонента',
                                                                         name_tariff as 'Тариф',
-                                                                        concat(surname, ' ', first_name, ' ', second_name) as 'Клиент'
+                                                                        concat(surname, ' ', first_name, ' ', second_name) as 'Клиент',
+                                                                        fk_tariff, fk_subscriber
                                                                 from contracts, subscriber, tariff
                                                                 where tariff.id_tariff = contracts.fk_tariff and
                                                                         subscriber.id_subscriber = contracts.fk_subscriber");
+
             ContractsTable = dt;
             tableContracts.DataSource = ContractsTable;
-
+            
+            
+            
+            
             tableContracts.Columns[0].ReadOnly = true;
-
+            tableContracts.Columns[6].Visible = false;
+            tableContracts.Columns[7].Visible = false;
             tableContracts.CellClick += new DataGridViewCellEventHandler(CreateOnComboBoxInTableContracts);
 
             installColorBackgroundButton();
@@ -94,14 +106,20 @@ namespace Internet_Service_Provider.Controls.Contract
         private void CreateOnComboBoxInTableContracts(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewComboBoxCell comboBoxCell = new DataGridViewComboBoxCell();
-            DataTable tariffs = DBMySqlUtils.ExecuteMySqlCommandAndReturnTable("select name_tariff from tariff");
+            /*DataTable tariffs = DBMySqlUtils.ExecuteMySqlCommandAndReturnTable("select name_tariff from tariff");
             int i = 0;
             while (tariffs.Rows.Count > i)
             {
                 comboBoxCell.Items.Add(tariffs.Rows[i].ItemArray[0].ToString());
                 i++;
             }
-            tableContracts.Rows[tableContracts.CurrentRow.Index].Cells[4] = comboBoxCell;
+            tableContracts.Rows[tableContracts.CurrentRow.Index].Cells[4] = comboBoxCell;*/
+
+            DataGridViewButtonCell button = new DataGridViewButtonCell();
+            button.FlatStyle = FlatStyle.Flat;
+            
+            tableContracts.Rows[tableContracts.CurrentRow.Index].Cells[4] = button;
+
         }
 
 

@@ -28,44 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.tableSubscriber = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.tableTariffs = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.SyncCommandButton = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.tableSubscriber)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableTariffs)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableSubscriber
+            // tableTariffs
             // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Purple;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tableSubscriber.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.tableSubscriber.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tableSubscriber.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.tableSubscriber.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.tableSubscriber.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Purple;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tableSubscriber.DefaultCellStyle = dataGridViewCellStyle6;
-            this.tableSubscriber.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableSubscriber.Location = new System.Drawing.Point(5, 64);
-            this.tableSubscriber.Margin = new System.Windows.Forms.Padding(5);
-            this.tableSubscriber.Name = "tableSubscriber";
-            this.tableSubscriber.Size = new System.Drawing.Size(722, 402);
-            this.tableSubscriber.TabIndex = 0;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Purple;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tableTariffs.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.tableTariffs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tableTariffs.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.tableTariffs.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tableTariffs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Purple;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tableTariffs.DefaultCellStyle = dataGridViewCellStyle2;
+            this.tableTariffs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableTariffs.Location = new System.Drawing.Point(5, 64);
+            this.tableTariffs.Margin = new System.Windows.Forms.Padding(5);
+            this.tableTariffs.Name = "tableTariffs";
+            this.tableTariffs.Size = new System.Drawing.Size(722, 402);
+            this.tableTariffs.TabIndex = 0;
             // 
             // button2
             // 
@@ -113,7 +113,7 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tableSubscriber, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tableTariffs, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -123,7 +123,7 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(732, 471);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
-            // SubscriberControl
+            // TariffsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -131,9 +131,9 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F);
             this.Margin = new System.Windows.Forms.Padding(5);
-            this.Name = "SubscriberControl";
+            this.Name = "TariffsControl";
             this.Size = new System.Drawing.Size(732, 471);
-            ((System.ComponentModel.ISupportInitialize)(this.tableSubscriber)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableTariffs)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -142,7 +142,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView tableSubscriber;
+        private System.Windows.Forms.DataGridView tableTariffs;
         private System.Windows.Forms.Button SyncCommandButton;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;

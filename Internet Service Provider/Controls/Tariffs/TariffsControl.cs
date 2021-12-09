@@ -14,12 +14,17 @@ namespace Internet_Service_Provider.Controls.Tariffs
 {
     public partial class TariffsControl : UserControl
     {
-        DataTable SubscriberTable;
+        DataTable TariffsTable;
         public TariffsControl()
         {
             InitializeComponent();
             loadData();
             eventsButton();
+            tableTariffs.DataError += (s, e) =>
+            {
+                tableTariffs.EditingControl.BackColor = Color.Red;
+                MessageBox.Show(e.Exception.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            };
         }
 
 
@@ -27,44 +32,50 @@ namespace Internet_Service_Provider.Controls.Tariffs
         {
             SyncCommandButton.Click += (s, e) =>
             {
-                MySqlDataAdapter myAdapter = new MySqlDataAdapter();
-                using (MySqlConnection connection = new MySqlConnection(DBMySqlUtils.GetStringConnection()))
+                try
                 {
-                    connection.Open();
-                    #region InsertCommandSubscribers
-                    myAdapter.InsertCommand = new MySqlCommand("insert into subscriber values (NULL, @surname, @first_name, @second_name, @number_phone)", connection);
-                    myAdapter.InsertCommand.Parameters.Add("@surname", MySqlDbType.VarChar, 30, "Фамилия");
-                    myAdapter.InsertCommand.Parameters.Add("@first_name", MySqlDbType.VarChar, 30, "Имя");
-                    myAdapter.InsertCommand.Parameters.Add("@second_name", MySqlDbType.VarChar, 30, "Отчество");
-                    myAdapter.InsertCommand.Parameters.Add("@number_phone", MySqlDbType.VarChar, 17, "Номер телефона");
-                    #endregion
+                    MySqlDataAdapter myAdapter = new MySqlDataAdapter();
+                    using (MySqlConnection connection = new MySqlConnection(DBMySqlUtils.GetStringConnection()))
+                    {
+                        connection.Open();
+                        #region InsertCommandSubscribers
+                        myAdapter.InsertCommand = new MySqlCommand("insert into tariff values (NULL, @name_tariff, @price, @speed, @about)", connection);
+                        myAdapter.InsertCommand.Parameters.Add("@name_tariff", MySqlDbType.VarChar, 30, "Наименование тарифа");
+                        myAdapter.InsertCommand.Parameters.Add("@price", MySqlDbType.VarChar, 30, "Цена");
+                        myAdapter.InsertCommand.Parameters.Add("@speed", MySqlDbType.VarChar, 30, "Скорость (Мбит/с)");
+                        myAdapter.InsertCommand.Parameters.Add("@about", MySqlDbType.VarChar, 10000, "Подробно");
+                        #endregion
 
-                    #region DeleteCommandSubscriber
-                    myAdapter.DeleteCommand = new MySqlCommand("delete from subscriber where id_subscriber = @id_subscriber", connection);
-                    myAdapter.DeleteCommand.Parameters.Add("@id_subscriber", MySqlDbType.VarChar, 5, "ID");
-                    #endregion
+                        #region DeleteCommandSubscriber
+                        myAdapter.DeleteCommand = new MySqlCommand("delete from tariff where id_tariff = @id_tariff", connection);
+                        myAdapter.DeleteCommand.Parameters.Add("@id_tariff", MySqlDbType.VarChar, 5, "ID");
+                        #endregion
 
-                    #region UpdateCommandSubscriber
+                        #region UpdateCommandSubscriber
 
-                    myAdapter.UpdateCommand = new MySqlCommand(@"	update subscriber set 	surname = @surname,
-                                                                                            first_name = @first_name,
-                                                                                            second_name = @second_name,
-                                                                                            number_phone = @number_phone
-                                                                    where id_subscriber = @id_subscriber", connection);
+                        myAdapter.UpdateCommand = new MySqlCommand(@"	update tariff set 	name_tariff = @name_tariff,
+                                                                                            price = @price,
+                                                                                            speed = @speed,
+                                                                                            about = @about
+                                                                    where id_tariff = @id_tariff", connection);
 
-                    myAdapter.UpdateCommand.Parameters.Add("@id_subscriber", MySqlDbType.VarChar, 5, "ID");
-                    myAdapter.UpdateCommand.Parameters.Add("@surname", MySqlDbType.VarChar, 30, "Фамилия");
-                    myAdapter.UpdateCommand.Parameters.Add("@first_name", MySqlDbType.VarChar, 30, "Имя");
-                    myAdapter.UpdateCommand.Parameters.Add("@second_name", MySqlDbType.VarChar, 30, "Отчество");
-                    myAdapter.UpdateCommand.Parameters.Add("@number_phone", MySqlDbType.VarChar, 17, "Номер телефона");
+                        myAdapter.UpdateCommand.Parameters.Add("@id_tariff", MySqlDbType.VarChar, 5, "ID");
+                        myAdapter.UpdateCommand.Parameters.Add("@name_tariff", MySqlDbType.VarChar, 30, "Наименование тарифа");
+                        myAdapter.UpdateCommand.Parameters.Add("@price", MySqlDbType.VarChar, 30, "Цена");
+                        myAdapter.UpdateCommand.Parameters.Add("@speed", MySqlDbType.VarChar, 30, "Скорость (Мбит/с)");
+                        myAdapter.UpdateCommand.Parameters.Add("@about", MySqlDbType.VarChar, 10000, "Подробно");
 
-                    #endregion
+                        #endregion
 
-                    myAdapter.Update(SubscriberTable);
-                    MessageBox.Show("Операции проведены успешно.", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    loadData();
+                        myAdapter.Update(TariffsTable);
+                        MessageBox.Show("Операции проведены успешно.", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        loadData();
+                    }
                 }
-
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
             };
         }
@@ -77,8 +88,9 @@ namespace Internet_Service_Provider.Controls.Tariffs
                                                                                    speed as 'Скорость (Мбит/с)',
                                                                                    About as 'Подробно'
                                                                             FROM isp.tariff; ");
-            SubscriberTable = dt;
-            tableSubscriber.DataSource = SubscriberTable;
+            TariffsTable = dt;
+            tableTariffs.DataSource = TariffsTable;
+            tableTariffs.Columns[0].ReadOnly = true;
             installColorBackgroundButton();
         }
 

@@ -77,6 +77,6 @@ M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Syst
 M:\MyProjects\Internet Service Provider\Internet Service Provider\obj\Debug\Internet Service Provider.csproj.CopyComplete
 M:\MyProjects\Internet Service Provider\Internet Service Provider\obj\Debug\Internet Service Provider.exe.config
 M:\MyProjects\Internet Service Provider\Internet Service Provider\obj\Debug\Internet_Service_Provider.MainWindow.resources
-M:\MyProjects\Internet Service Provider\Internet Service Provider\obj\Debug\Internet_Service_Provider.SubscriberControl.resources
 M:\MyProjects\Internet Service Provider\Internet Service Provider\obj\Debug\Internet_Service_Provider.Controls.Contract.ContractControl.resources
 M:\MyProjects\Internet Service Provider\Internet Service Provider\obj\Debug\Internet_Service_Provider.Controls.Tariffs.TariffsControl.resources
+M:\MyProjects\Internet Service Provider\Internet Service Provider\obj\Debug\Internet_Service_Provider.Controls.Subscriber.SubscriberControl.resources
