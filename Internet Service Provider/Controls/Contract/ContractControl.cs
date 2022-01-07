@@ -19,7 +19,7 @@ namespace Internet_Service_Provider.Controls.Contract
         {
             InitializeComponent();
             loadData();
-            //eventsButton();
+            eventsButton();
         }
 
 
@@ -33,18 +33,16 @@ namespace Internet_Service_Provider.Controls.Contract
                     connection.Open();
                     #region InsertCommandSubscribers
 
-                    
 
-                    
-
-
-                    myAdapter.InsertCommand = new MySqlCommand("insert into contracts values (NULL, @number_contract, @date_contract, @adress, @fk_tariff, @fk_subscriber)", connection);
+                    myAdapter.InsertCommand = new MySqlCommand("insert into contracts values (NULL, @date_contract, @number_contract, @adress, @fk_tariff, @fk_subscriber)", connection);
                     myAdapter.InsertCommand.Parameters.Add("@number_contract", MySqlDbType.VarChar, 30, "Номер договора");
-                    myAdapter.InsertCommand.Parameters.Add("@date_contract", MySqlDbType.Date, 30, "Дата составления договора");
+                    myAdapter.InsertCommand.Parameters.Add("@date_contract", MySqlDbType.Date, 0, "Дата составления договора");
                     myAdapter.InsertCommand.Parameters.Add("@adress", MySqlDbType.VarChar, 60, "Адрес абонента");
-                    //myAdapter.InsertCommand.Parameters.Add("@fk_tariff", MySqlDbType.Int32, fk_tariff);
-                    #endregion
 
+                    myAdapter.InsertCommand.Parameters.Add("@fk_tariff", MySqlDbType.Int32, 0, "Тариф");
+                    myAdapter.InsertCommand.Parameters.Add("@fk_subscriber", MySqlDbType.Int32, 0, "Клиент");
+                    #endregion
+                    
                     #region DeleteCommandSubscriber
                     myAdapter.DeleteCommand = new MySqlCommand("delete from contracts where id_contracts = @id_contracts", connection);
                     myAdapter.DeleteCommand.Parameters.Add("@id_contracts", MySqlDbType.VarChar, 5, "ID");
@@ -52,18 +50,20 @@ namespace Internet_Service_Provider.Controls.Contract
 
                     #region UpdateCommandSubscriber
 
-                    myAdapter.UpdateCommand = new MySqlCommand(@"	update subscriber set 	surname = @surname,
-                                                                                            first_name = @first_name,
-                                                                                            second_name = @second_name,
-                                                                                            number_phone = @number_phone
-                                                                    where id_subscriber = @id_subscriber", connection);
+                    myAdapter.UpdateCommand = new MySqlCommand(@"	update contracts set 	date_contract = @date_contract,
+                                                                                            number_contract = @number_contract,
+                                                                                            adress = @adress,
+                                                                                            fk_tariff = @fk_tariff,
+                                                                                            fk_subscriber = @fk_subscriber
+                                                                    where id_contracts = @id_contracts;", connection);
 
-                    myAdapter.UpdateCommand.Parameters.Add("@id_subscriber", MySqlDbType.VarChar, 5, "ID");
-                    myAdapter.UpdateCommand.Parameters.Add("@surname", MySqlDbType.VarChar, 30, "Фамилия");
-                    myAdapter.UpdateCommand.Parameters.Add("@first_name", MySqlDbType.VarChar, 30, "Имя");
-                    myAdapter.UpdateCommand.Parameters.Add("@second_name", MySqlDbType.VarChar, 30, "Отчество");
-                    myAdapter.UpdateCommand.Parameters.Add("@number_phone", MySqlDbType.VarChar, 17, "Номер телефона");
-
+                    
+                    myAdapter.UpdateCommand.Parameters.Add("@date_contract", MySqlDbType.Date, 0, "Дата составления договора");
+                    myAdapter.UpdateCommand.Parameters.Add("@number_contract", MySqlDbType.VarChar, 30, "Номер договора");
+                    myAdapter.UpdateCommand.Parameters.Add("@adress", MySqlDbType.VarChar, 60, "Адрес абонента");
+                    myAdapter.UpdateCommand.Parameters.Add("@fk_tariff", MySqlDbType.Int32, 0, "Тариф");
+                    myAdapter.UpdateCommand.Parameters.Add("@fk_subscriber", MySqlDbType.Int32, 0, "Клиент");
+                    myAdapter.UpdateCommand.Parameters.Add("@id_contracts", MySqlDbType.VarChar, 5, "ID");
                     #endregion
 
                     myAdapter.Update(ContractsTable);
@@ -71,6 +71,13 @@ namespace Internet_Service_Provider.Controls.Contract
                     loadData();
                 }
 
+
+            };
+            ShowWindowCreater.Click += (s, e) =>
+            {
+
+                AddContractWindow addContract = new AddContractWindow();
+                addContract.ShowDialog();
 
             };
         }
@@ -97,30 +104,12 @@ namespace Internet_Service_Provider.Controls.Contract
             tableContracts.Columns[0].ReadOnly = true;
             tableContracts.Columns[6].Visible = false;
             tableContracts.Columns[7].Visible = false;
-            tableContracts.CellClick += new DataGridViewCellEventHandler(CreateOnComboBoxInTableContracts);
-
+            
+            
             installColorBackgroundButton();
         }
 
 
-        private void CreateOnComboBoxInTableContracts(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewComboBoxCell comboBoxCell = new DataGridViewComboBoxCell();
-            /*DataTable tariffs = DBMySqlUtils.ExecuteMySqlCommandAndReturnTable("select name_tariff from tariff");
-            int i = 0;
-            while (tariffs.Rows.Count > i)
-            {
-                comboBoxCell.Items.Add(tariffs.Rows[i].ItemArray[0].ToString());
-                i++;
-            }
-            tableContracts.Rows[tableContracts.CurrentRow.Index].Cells[4] = comboBoxCell;*/
-
-            DataGridViewButtonCell button = new DataGridViewButtonCell();
-            button.FlatStyle = FlatStyle.Flat;
-            
-            tableContracts.Rows[tableContracts.CurrentRow.Index].Cells[4] = button;
-
-        }
 
 
 
@@ -130,6 +119,65 @@ namespace Internet_Service_Provider.Controls.Contract
             var temp = ConfigurationManager.AppSettings["BackgroundButtonMenu"].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             Color color = Color.FromArgb(Int32.Parse(temp[0]), Int32.Parse(temp[1]), Int32.Parse(temp[2]));
             SyncCommandButton.BackColor = color;
+        }
+
+        private void tableContracts_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            //e.ThrowException = false;
+        }
+
+        private void tableContracts_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            if (tableContracts.CurrentCell.ColumnIndex == 4 && e.Control is ComboBox)
+            {
+                ComboBox comboBox = e.Control as ComboBox;
+                //comboBox.SelectedIndexChanged -= LastColumnComboSelectionChanged;
+                comboBox.SelectedIndexChanged += LastColumnComboSelectionChanged;
+            }
+        }
+
+        private void LastColumnComboSelectionChanged(object sender, EventArgs e)
+        {
+            ComboBox cellComboBox = (ComboBox)tableContracts.EditingControl;
+            
+            if(cellComboBox.SelectedValue !=null || cellComboBox.SelectedValue.ToString() != "")
+                MessageBox.Show(cellComboBox.SelectedValue.ToString());
+
+        }
+
+        private void PrintReport_Click(object sender, EventArgs e)
+        {
+            Classes.PrintReportWord excelReport = new Classes.PrintReportWord();
+            if (tableContracts.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Не выделено строк", "Ошибка", MessageBoxButtons.OK);
+            } else
+            {
+                //tableContracts.SelectedRows[0].Cells[0].Value;
+
+
+                string sqlCommand = $@"select number_contract, CONCAT(surname, ' ', first_name, ' ', second_name) as FIO,
+        date_birth, adress_subscriber, adress, number_phone, name_tariff, price, date_contract, serial_passport, number_passport,
+        who_passport, date_passport
+        from subscriber, contracts, tariff
+        where subscriber.id_subscriber = contracts.fk_subscriber and
+        tariff.id_tariff = contracts.fk_tariff and id_contracts = {tableContracts.SelectedRows[0].Cells[0].Value}";
+                DataTable dt = DBMySqlUtils.ExecuteMySqlCommandAndReturnTable(sqlCommand);
+
+                
+                excelReport.PrintReport(dt);
+            }
+            
+        }
+
+        private void refreshTable_Click(object sender, EventArgs e)
+        {
+            loadData();
+        }
+
+        private void ContractControl_VisibleChanged(object sender, EventArgs e)
+        {
+            loadData();
         }
     }
 }

@@ -31,10 +31,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableTariffs = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
-            this.SyncCommandButton = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.SyncCommandButton = new System.Windows.Forms.Button();
+            this.refreshTable = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tableTariffs)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -67,40 +67,11 @@
             this.tableTariffs.Size = new System.Drawing.Size(722, 402);
             this.tableTariffs.TabIndex = 0;
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkViolet;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(54, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(45, 45);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // SyncCommandButton
-            // 
-            this.SyncCommandButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.SyncCommandButton.BackgroundImage = global::Internet_Service_Provider.Properties.Resources.ExampleIcon;
-            this.SyncCommandButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.SyncCommandButton.FlatAppearance.BorderSize = 0;
-            this.SyncCommandButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.SyncCommandButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkViolet;
-            this.SyncCommandButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SyncCommandButton.Location = new System.Drawing.Point(3, 3);
-            this.SyncCommandButton.Name = "SyncCommandButton";
-            this.SyncCommandButton.Size = new System.Drawing.Size(45, 45);
-            this.SyncCommandButton.TabIndex = 1;
-            this.SyncCommandButton.UseVisualStyleBackColor = false;
-            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.Gray;
             this.flowLayoutPanel1.Controls.Add(this.SyncCommandButton);
-            this.flowLayoutPanel1.Controls.Add(this.button2);
+            this.flowLayoutPanel1.Controls.Add(this.refreshTable);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -123,6 +94,36 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(732, 471);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
+            // SyncCommandButton
+            // 
+            this.SyncCommandButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.SyncCommandButton.BackgroundImage = global::Internet_Service_Provider.Properties.Resources.ExampleIcon;
+            this.SyncCommandButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.SyncCommandButton.FlatAppearance.BorderSize = 0;
+            this.SyncCommandButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.SyncCommandButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkViolet;
+            this.SyncCommandButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SyncCommandButton.Location = new System.Drawing.Point(3, 3);
+            this.SyncCommandButton.Name = "SyncCommandButton";
+            this.SyncCommandButton.Size = new System.Drawing.Size(45, 45);
+            this.SyncCommandButton.TabIndex = 1;
+            this.SyncCommandButton.UseVisualStyleBackColor = false;
+            // 
+            // refreshTable
+            // 
+            this.refreshTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.refreshTable.BackgroundImage = global::Internet_Service_Provider.Properties.Resources.refresh;
+            this.refreshTable.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.refreshTable.FlatAppearance.BorderSize = 0;
+            this.refreshTable.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.refreshTable.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkViolet;
+            this.refreshTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refreshTable.Location = new System.Drawing.Point(54, 3);
+            this.refreshTable.Name = "refreshTable";
+            this.refreshTable.Size = new System.Drawing.Size(45, 45);
+            this.refreshTable.TabIndex = 2;
+            this.refreshTable.UseVisualStyleBackColor = false;
+            // 
             // TariffsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -144,7 +145,7 @@
 
         private System.Windows.Forms.DataGridView tableTariffs;
         private System.Windows.Forms.Button SyncCommandButton;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button refreshTable;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }

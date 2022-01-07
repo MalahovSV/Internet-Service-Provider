@@ -78,6 +78,11 @@ namespace Internet_Service_Provider.Controls.Tariffs
                 }
 
             };
+
+            refreshTable.Click += (s, e) =>
+            {
+                loadData();
+            };
         }
 
         private void loadData()

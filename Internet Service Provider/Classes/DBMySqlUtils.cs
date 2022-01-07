@@ -30,5 +30,16 @@ namespace Internet_Service_Provider
             }
         }
 
+        static public void ExecuteCommand (string command)
+        {
+
+            using (MySqlConnection mySql = new MySqlConnection(GetStringConnection()))
+            {
+                mySql.Open();
+                MySqlCommand mySqlCommand = new MySqlCommand(command, mySql);
+                mySqlCommand.ExecuteNonQuery();
+            }
+        }
+
     }
 }

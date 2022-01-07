@@ -14,23 +14,14 @@ namespace Internet_Service_Provider
     public partial class MainWindow : Form
     {
         private List<UserControl> _controlls;
-        private AuthorizationWindow _authorizationWindow;
-        public MainWindow(AuthorizationWindow authorizationWindow)
+
+        public MainWindow()
         {
             InitializeComponent();
-            _authorizationWindow = authorizationWindow;
-            _authorizationWindow.Hide();
-            eventsWindow();
+            
             dropColorButtonMenu();
             eventsClickMenuButton();
         }
-
-
-        private void eventsWindow()
-        {
-            this.FormClosed += (s, e) => { _authorizationWindow.Show(); };
-        }
-
 
         private void eventsClickMenuButton()
         {
