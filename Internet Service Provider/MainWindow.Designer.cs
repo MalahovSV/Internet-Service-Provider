@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.mainLayout = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.statusButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.helpButton = new System.Windows.Forms.Button();
             this.tariffsButton = new System.Windows.Forms.Button();
             this.subscriberButton = new System.Windows.Forms.Button();
             this.contractControl = new System.Windows.Forms.Button();
@@ -100,8 +100,7 @@
             this.tableLayoutPanel2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.button5, 0, 4);
-            this.tableLayoutPanel2.Controls.Add(this.button4, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.helpButton, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.tariffsButton, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.subscriberButton, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.contractControl, 0, 0);
@@ -109,53 +108,34 @@
             this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 70);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 6;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tableLayoutPanel2.RowCount = 5;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(209, 420);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
-            // button5
+            // helpButton
             // 
-            this.button5.BackColor = System.Drawing.Color.Gray;
-            this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkViolet;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button5.Location = new System.Drawing.Point(4, 325);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.button5.Size = new System.Drawing.Size(201, 70);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Помощь";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Gray;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkViolet;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button4.Location = new System.Drawing.Point(4, 245);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.button4.Size = new System.Drawing.Size(201, 70);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Настройки";
-            this.button4.UseVisualStyleBackColor = false;
+            this.helpButton.BackColor = System.Drawing.Color.Gray;
+            this.helpButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.helpButton.FlatAppearance.BorderSize = 0;
+            this.helpButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Gray;
+            this.helpButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.helpButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkViolet;
+            this.helpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.helpButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.helpButton.Location = new System.Drawing.Point(4, 245);
+            this.helpButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.helpButton.Name = "helpButton";
+            this.helpButton.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.helpButton.Size = new System.Drawing.Size(201, 70);
+            this.helpButton.TabIndex = 4;
+            this.helpButton.Text = "Справка";
+            this.helpButton.UseVisualStyleBackColor = false;
             // 
             // tariffsButton
             // 
@@ -237,6 +217,7 @@
             this.ClientSize = new System.Drawing.Size(1162, 501);
             this.Controls.Add(this.mainLayout);
             this.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "MainWindow";
             this.Text = "ISP";
@@ -253,8 +234,7 @@
         private System.Windows.Forms.TableLayoutPanel mainLayout;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button helpButton;
         private System.Windows.Forms.Button tariffsButton;
         private System.Windows.Forms.Button subscriberButton;
         private System.Windows.Forms.Button contractControl;

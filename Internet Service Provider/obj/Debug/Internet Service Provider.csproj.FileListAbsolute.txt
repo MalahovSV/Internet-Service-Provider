@@ -82,3 +82,4 @@ M:\MyProjects\Internet Service Provider\Internet Service Provider\obj\Debug\Inte
 M:\MyProjects\Internet Service Provider\Internet Service Provider\obj\Debug\Internet Service Provider.csproj.ResolveComReference.cache
 M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Xceed.Document.NET.dll
 M:\MyProjects\Internet Service Provider\Internet Service Provider\bin\Debug\Xceed.Words.NET.dll
+M:\MyProjects\Internet Service Provider\Internet Service Provider\obj\Debug\Internet_Service_Provider.Controls.HelpWindow.resources

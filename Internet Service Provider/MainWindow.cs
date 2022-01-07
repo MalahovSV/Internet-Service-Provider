@@ -48,8 +48,11 @@ namespace Internet_Service_Provider
                 installControl(_controlls[2]);
                 statusButton.Text = "Тарифы";
             };
-            button4.Click += (s, e) => { installColorForMenuButton(button4); };
-            button5.Click += (s, e) => { installColorForMenuButton(button5); };
+            helpButton.Click += (s, e) => { 
+                installColorForMenuButton(helpButton);
+                installControl(_controlls[3]);
+                statusButton.Text = "Справка";
+            };
 
         }
 
@@ -76,8 +79,7 @@ namespace Internet_Service_Provider
             contractControl.BackColor = color;
             subscriberButton.BackColor = color;
             tariffsButton.BackColor = color;
-            button4.BackColor = color;
-            button5.BackColor = color;
+            helpButton.BackColor = color;
         }
 
         private void contractControl_Click(object sender, EventArgs e)
@@ -91,6 +93,7 @@ namespace Internet_Service_Provider
             _controlls.Add(new Controls.Contract.ContractControl());
             _controlls.Add(new Controls.Subscriber.SubscriberControl());
             _controlls.Add(new Controls.Tariffs.TariffsControl());
+            _controlls.Add(new Controls.HelpWindow());
         }
 
         private void tariffsButton_Click(object sender, EventArgs e)
