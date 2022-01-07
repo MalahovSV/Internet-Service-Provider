@@ -31,39 +31,10 @@ namespace Internet_Service_Provider.Controls.Contract
                 using (MySqlConnection connection = new MySqlConnection(DBMySqlUtils.GetStringConnection()))
                 {
                     connection.Open();
-                    #region InsertCommandSubscribers
 
-
-                    myAdapter.InsertCommand = new MySqlCommand("insert into contracts values (NULL, @date_contract, @number_contract, @adress, @fk_tariff, @fk_subscriber)", connection);
-                    myAdapter.InsertCommand.Parameters.Add("@number_contract", MySqlDbType.VarChar, 30, "Номер договора");
-                    myAdapter.InsertCommand.Parameters.Add("@date_contract", MySqlDbType.Date, 0, "Дата составления договора");
-                    myAdapter.InsertCommand.Parameters.Add("@adress", MySqlDbType.VarChar, 60, "Адрес абонента");
-
-                    myAdapter.InsertCommand.Parameters.Add("@fk_tariff", MySqlDbType.Int32, 0, "Тариф");
-                    myAdapter.InsertCommand.Parameters.Add("@fk_subscriber", MySqlDbType.Int32, 0, "Клиент");
-                    #endregion
-                    
                     #region DeleteCommandSubscriber
                     myAdapter.DeleteCommand = new MySqlCommand("delete from contracts where id_contracts = @id_contracts", connection);
                     myAdapter.DeleteCommand.Parameters.Add("@id_contracts", MySqlDbType.VarChar, 5, "ID");
-                    #endregion
-
-                    #region UpdateCommandSubscriber
-
-                    myAdapter.UpdateCommand = new MySqlCommand(@"	update contracts set 	date_contract = @date_contract,
-                                                                                            number_contract = @number_contract,
-                                                                                            adress = @adress,
-                                                                                            fk_tariff = @fk_tariff,
-                                                                                            fk_subscriber = @fk_subscriber
-                                                                    where id_contracts = @id_contracts;", connection);
-
-                    
-                    myAdapter.UpdateCommand.Parameters.Add("@date_contract", MySqlDbType.Date, 0, "Дата составления договора");
-                    myAdapter.UpdateCommand.Parameters.Add("@number_contract", MySqlDbType.VarChar, 30, "Номер договора");
-                    myAdapter.UpdateCommand.Parameters.Add("@adress", MySqlDbType.VarChar, 60, "Адрес абонента");
-                    myAdapter.UpdateCommand.Parameters.Add("@fk_tariff", MySqlDbType.Int32, 0, "Тариф");
-                    myAdapter.UpdateCommand.Parameters.Add("@fk_subscriber", MySqlDbType.Int32, 0, "Клиент");
-                    myAdapter.UpdateCommand.Parameters.Add("@id_contracts", MySqlDbType.VarChar, 5, "ID");
                     #endregion
 
                     myAdapter.Update(ContractsTable);
@@ -75,11 +46,20 @@ namespace Internet_Service_Provider.Controls.Contract
             };
             ShowWindowCreater.Click += (s, e) =>
             {
-
-                AddContractWindow addContract = new AddContractWindow();
-                addContract.ShowDialog();
+                showAddContractWindow(true, null);
 
             };
+
+            updateRecordButton.Click += (s, e) =>
+            {
+                showAddContractWindow(false, tableContracts.SelectedRows[0].Cells[0].Value.ToString());
+            };
+        }
+
+        private static void showAddContractWindow(bool Post, string id)
+        {
+            AddContractWindow addContract = new AddContractWindow(Post, id);
+            addContract.ShowDialog();
         }
 
         private void loadData()
@@ -177,6 +157,24 @@ namespace Internet_Service_Provider.Controls.Contract
 
         private void ContractControl_VisibleChanged(object sender, EventArgs e)
         {
+            loadData();
+        }
+
+        private void удалитьЗаписьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DBMySqlUtils.ExecuteCommand($"delete from contracts where id_contracts = {tableContracts.Rows[0].Cells[0].Value.ToString()}");
+            loadData();
+        }
+
+        private void изменитьЗаписьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showAddContractWindow(false, tableContracts.SelectedRows[0].Cells[0].Value.ToString());
+            loadData();
+        }
+
+        private void добавитьЗаписьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showAddContractWindow(true, null);
             loadData();
         }
     }

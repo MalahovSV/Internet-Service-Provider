@@ -40,6 +40,7 @@
             this.clientCombo = new System.Windows.Forms.ComboBox();
             this.adressContract = new System.Windows.Forms.TextBox();
             this.canselOperation = new System.Windows.Forms.Button();
+            this.upRecord = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // addRecord
@@ -51,6 +52,7 @@
             this.addRecord.TabIndex = 0;
             this.addRecord.Text = "Добавить";
             this.addRecord.UseVisualStyleBackColor = true;
+            this.addRecord.Visible = false;
             this.addRecord.Click += new System.EventHandler(this.addRecord_Click);
             // 
             // label1
@@ -112,6 +114,7 @@
             // 
             // dateContract
             // 
+            this.dateContract.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateContract.Location = new System.Drawing.Point(221, 106);
             this.dateContract.Margin = new System.Windows.Forms.Padding(5);
             this.dateContract.Name = "dateContract";
@@ -156,11 +159,23 @@
             this.canselOperation.UseVisualStyleBackColor = true;
             this.canselOperation.Click += new System.EventHandler(this.canselOperation_Click);
             // 
+            // upRecord
+            // 
+            this.upRecord.Location = new System.Drawing.Point(141, 344);
+            this.upRecord.Margin = new System.Windows.Forms.Padding(5);
+            this.upRecord.Name = "upRecord";
+            this.upRecord.Size = new System.Drawing.Size(143, 45);
+            this.upRecord.TabIndex = 12;
+            this.upRecord.Text = "Изменить";
+            this.upRecord.UseVisualStyleBackColor = true;
+            this.upRecord.Visible = false;
+            // 
             // AddContractWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(614, 441);
+            this.Controls.Add(this.upRecord);
             this.Controls.Add(this.canselOperation);
             this.Controls.Add(this.adressContract);
             this.Controls.Add(this.label5);
@@ -196,5 +211,6 @@
         private System.Windows.Forms.ComboBox clientCombo;
         private System.Windows.Forms.TextBox adressContract;
         private System.Windows.Forms.Button canselOperation;
+        private System.Windows.Forms.Button upRecord;
     }
 }

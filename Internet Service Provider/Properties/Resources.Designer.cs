@@ -63,6 +63,26 @@ namespace Internet_Service_Provider.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add {
+            get {
+                object obj = ResourceManager.GetObject("add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap blockusignLogoHiRes_ {
+            get {
+                object obj = ResourceManager.GetObject("blockusignLogoHiRes_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ExampleIcon {
             get {
                 object obj = ResourceManager.GetObject("ExampleIcon", resourceCulture);
@@ -136,6 +156,16 @@ namespace Internet_Service_Provider.Properties {
         internal static System.Drawing.Bitmap TariffsIcon2 {
             get {
                 object obj = ResourceManager.GetObject("TariffsIcon2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap upd {
+            get {
+                object obj = ResourceManager.GetObject("upd", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

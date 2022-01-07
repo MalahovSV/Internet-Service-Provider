@@ -12,10 +12,24 @@ namespace Internet_Service_Provider.Controls.Contract
 {
     public partial class AddContractWindow : Form
     {
-        public AddContractWindow()
+        string _ID;
+        public AddContractWindow(bool POST, string ID)
         {
             InitializeComponent();
+
             loadData();
+
+            if (POST == true)
+            {
+                addRecord.Visible = true;
+            } else
+            {
+                upRecord.Visible = true;
+                _ID = ID;
+                loadRecord(_ID);
+            }
+
+            
             eventsClickButton();
         }
 
@@ -30,6 +44,18 @@ namespace Internet_Service_Provider.Controls.Contract
             tariffCombo.DataSource = tariffs;
             tariffCombo.DisplayMember = "name_tariff";
             tariffCombo.ValueMember = "id_tariff";
+        }
+
+        public void loadRecord(string ID)
+        {
+            DataTable record = DBMySqlUtils.ExecuteMySqlCommandAndReturnTable($@"select number_contract, date_contract, adress, id_subscriber, id_tariff from contracts, subscriber, tariff
+where contracts.fk_subscriber = id_subscriber and fk_tariff = id_tariff and id_contracts = {ID}");
+            numberContract.Text = record.Rows[0].ItemArray[0].ToString();
+            dateContract.Value = DateTime.Parse(record.Rows[0].ItemArray[1].ToString());
+            adressContract.Text = record.Rows[0].ItemArray[2].ToString();
+            clientCombo.SelectedValue = record.Rows[0].ItemArray[3].ToString();
+            tariffCombo.SelectedValue = record.Rows[0].ItemArray[4].ToString();
+
 
         }
 
@@ -37,9 +63,22 @@ namespace Internet_Service_Provider.Controls.Contract
         {
             addRecord.Click += (s, e) =>
             {
-                string command = $@"insert into contracts values (NULL, '{dateContract.Value.Date.ToShortDateString()}', '{numberContract.Text}', '{adressContract.Text}', {tariffCombo.SelectedValue}, {clientCombo.SelectedValue})";
+                string dateSql = $@"{dateContract.Value.Year}-{dateContract.Value.Month}-{dateContract.Value.Day}";
+                string command = $@"insert into contracts values (NULL, '{dateSql}', '{numberContract.Text}', '{adressContract.Text}', {tariffCombo.SelectedValue}, {clientCombo.SelectedValue})";
                 DBMySqlUtils.ExecuteCommand(command);
                 MessageBox.Show("Запись добавлена", "Сообщение", MessageBoxButtons.OK);
+            };
+            upRecord.Click += (s, e) =>
+            {
+                string dateSql = $@"{dateContract.Value.Year}-{dateContract.Value.Month}-{dateContract.Value.Day}";
+                string command = $@"update contracts set date_contract = '{dateSql}',
+                number_contract = '{numberContract.Text}',
+                adress = '{adressContract.Text}',
+                fk_tariff = {tariffCombo.SelectedValue},
+                fk_subscriber = {clientCombo.SelectedValue} 
+                where id_contracts = {_ID}"; 
+                DBMySqlUtils.ExecuteCommand(command);
+                MessageBox.Show("Запись изменена", "Сообщение", MessageBoxButtons.OK);
             };
         }
 

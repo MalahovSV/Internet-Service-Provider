@@ -27,7 +27,7 @@ namespace Internet_Service_Provider.Classes
                 Document.Bookmarks["number_order"].Paragraph.ReplaceText("[Номер_договора]", dt.Rows[0].ItemArray[0].ToString());
                 Document.Bookmarks["number_contract"].Paragraph.ReplaceText("[Номер_договора]", dt.Rows[0].ItemArray[0].ToString());
                 Document.Bookmarks["name_subscriber"].Paragraph.ReplaceText("[ФИО_клиента]", dt.Rows[0].ItemArray[1].ToString());
-                Document.Bookmarks["fio_subscriber"].Paragraph.ReplaceText("[ФИО_заказчика]", dt.Rows[0].ItemArray[1].ToString());
+                Document.Bookmarks["fio_subscriber"].Paragraph.ReplaceText("[ФИО_Заказчик]", dt.Rows[0].ItemArray[1].ToString());
                 Document.Bookmarks["name_subscriber1"].Paragraph.ReplaceText("[ФИО]", dt.Rows[0].ItemArray[1].ToString());
                 Document.Bookmarks["date_birth"].Paragraph.ReplaceText("[Дата_рождения]", DateTime.Parse(dt.Rows[0].ItemArray[2].ToString()).Date.ToShortDateString());
                 Document.Bookmarks["address_sub"].Paragraph.ReplaceText("[Адрес_регистрации]", dt.Rows[0].ItemArray[3].ToString());
